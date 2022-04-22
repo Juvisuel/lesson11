@@ -1,7 +1,7 @@
 import os
 import shutil
 
-def os_work():
+def os_work(choice = 7):
 
     while True:
 
@@ -15,7 +15,7 @@ def os_work():
         print('8. смена директории')
         print('9. вернуться в главное меню')
 
-        choice =  input('Выберите пункт меню ')
+        choice = input('Выберите пункт меню ')
 
         work_path = os.getcwd()
         # print('рабочий путь',work_path)
@@ -38,7 +38,7 @@ def os_work():
 
         if choice == '3':
             print(os.listdir(work_path))
-            name_old =  input('что копируем? имя + расширение')
+            name_old = input('что копируем? имя + расширение')
 
             if os.path.exists(name_old):
                 name_new = input('как назовем? имя + расширение')
