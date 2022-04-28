@@ -1,0 +1,1 @@
+{"files": [" listdir.txt", "born_fay_forever.py", "buy_dict.json", "main.py", "os_work.py", "test_1", "test_filemanager.py", "test_lesson12.py", "test_python.py", "wallet.py", "wallet_balance.txt"], "dirs": [".git", ".idea", ".pytest_cache", "testForTest", "test_dir_for_test", "venv", "__pycache__"]}

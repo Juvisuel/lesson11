@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="193bd2b5-1670-4034-92f1-6094e8745a49" name="Changes" comment="moved">
-      <change afterPath="$PROJECT_DIR$/test_filemanager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_python.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/os_work.py" beforeDir="false" afterPath="$PROJECT_DIR$/os_work.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wallet.py" beforeDir="false" afterPath="$PROJECT_DIR$/wallet.py" afterDir="false" />
-    </list>
+    <list default="true" id="193bd2b5-1670-4034-92f1-6094e8745a49" name="Changes" comment="lesson13" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,7 +30,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="lesson12" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -68,7 +61,7 @@
       <recent name="F:\learn_neuro\pythonProject" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests in test_filemanager.py">
+  <component name="RunManager" selected="Python tests.Python tests in test_lesson12.py">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="pythonProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -125,8 +118,23 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests in test_lesson12.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="pythonProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_lesson12.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests in test_lesson12.py" />
         <item itemvalue="Python tests.Python tests in test_filemanager.py" />
         <item itemvalue="Python.os_work" />
       </list>
@@ -155,7 +163,28 @@
       <option name="project" value="LOCAL" />
       <updated>1650018217120</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="newBranch">
+      <created>1650627433316</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1650627433316</updated>
+    </task>
+    <task id="LOCAL-00004" summary="lesson12">
+      <created>1650992411582</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1650992411582</updated>
+    </task>
+    <task id="LOCAL-00005" summary="lesson13">
+      <created>1651085687548</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1651085687548</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -174,7 +203,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="lesson12" />
+                        <option value="lesson13" />
                       </list>
                     </value>
                   </entry>
@@ -188,6 +217,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="moved" />
-    <option name="LAST_COMMIT_MESSAGE" value="moved" />
+    <MESSAGE value="newBranch" />
+    <MESSAGE value="lesson12" />
+    <MESSAGE value="lesson13" />
+    <option name="LAST_COMMIT_MESSAGE" value="lesson13" />
   </component>
 </project>

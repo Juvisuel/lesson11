@@ -1,5 +1,23 @@
+import json
 import os
 import shutil
+
+def save_workdir_to_file(work_path):
+    work_names = os.listdir(work_path)
+    list_dir = []
+    list_files = []
+    for file_dir in work_names:
+        if os.path.isfile(work_path+'/'+file_dir):
+            list_files.append(file_dir)
+        else:
+            list_dir.append(file_dir)
+    all_dict =  {}
+    all_dict['files'] = list_files
+    all_dict['dirs'] = list_dir
+
+    with open(' listdir.txt', 'w') as temp_file:
+        json.dump(all_dict, temp_file)
+
 
 def os_work(choice = 7):
 
@@ -48,6 +66,7 @@ def os_work(choice = 7):
 
         if choice == '4':
             print(os.listdir(work_path))   # посмотреть содержимое директории
+            save_workdir_to_file(work_path)
 
         if choice == '5':
             for dirname in os.listdir(work_path):

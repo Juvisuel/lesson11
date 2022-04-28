@@ -1,5 +1,5 @@
 # import random
-
+import json
 
 def refill(money_old, counter_old, money_add):
 
@@ -28,7 +28,43 @@ def cassa(transactions):
         print(f'Номер операции: {item} Расход/приход: {value[0]}, ,баланс: {value[1]}')
 
 
-def wallet(money, counter, buy_dict, transactions):
+def money_check():
+    try:
+        with open('wallet_balance.txt', 'r') as outfile:
+            balance = int(outfile.read())
+
+    except:
+        with open('wallet_balance.txt', 'w') as outfile:
+            outfile.write('0')
+            balance = 0
+
+    return balance
+
+
+def buy_dict_check():
+
+    try:
+        with open('buy_dict.json', 'r') as outfile:
+            buy_dict = json.load(outfile)
+    except:
+        buy_dict = {}
+        with open('buy_dict.json', 'w') as outfile:
+            json.dump(buy_dict, outfile)\
+
+    return buy_dict
+
+
+def wallet( counter, transactions):
+
+    f = open('wallet_balance.txt', 'r')
+    money = int(f.read())
+    print('баланс', money)
+    f.close()
+
+    with open('buy_dict.json', 'r') as outfile:
+        buy_dict = json.load(outfile)
+
+
 
     while True:
         print('1. пополнение счета')
@@ -51,7 +87,7 @@ def wallet(money, counter, buy_dict, transactions):
 
             if cost_item <= money:
                 cost_name = input('средств достаточно. Введите наименование покупки: ')
-                money_new, counter = buy(money, counter)
+                money_new, counter = buy(money, counter, cost_item)
                 buy_dict[cost_name] = [cost_item, counter]
                 transactions[counter] = [-1 * cost_item, money_new]
                 money = money_new
@@ -75,5 +111,11 @@ def wallet(money, counter, buy_dict, transactions):
             print('Неверный пункт меню')
 
     print(f'баланс = {money}, номер последней операции {counter}')
+    f = open('wallet_balance.txt', 'w')
+    f.write(str(money))
+    f.close()
+
+    with open('buy_dict.json', 'w') as outfile:
+        json.dump(buy_dict, outfile)
 
     return money, counter, buy_dict, transactions
