@@ -21,6 +21,7 @@ while True:
         os_work.os_work()
 
     elif choice_up == 2:
+
         money1, counter1, buyDict1, transactions1 = wallet.wallet (counter, transactions)
         money, counter, buyDict, transactions = money1, counter1, buyDict1, transactions1
 

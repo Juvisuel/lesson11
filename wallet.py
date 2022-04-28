@@ -2,13 +2,6 @@
 import json
 from decor import decor_all
 
-# def decor_all(f):
-#     def inner(*args, **qwargs):
-#         print('*' * 100)
-#         result = f(*args, **qwargs)
-#         print('*' * 100)
-#         return result
-#     return inner
 
 @decor_all
 def refill(money_old, counter_old, money_add):
@@ -76,6 +69,37 @@ def wallet( counter, transactions):
         buy_dict = json.load(outfile)
 
 
+=======
+
+def refill(money_old, counter_old, money_add):
+
+    money_new = money_old + money_add
+    counter_old += 1
+    print('баланс = ', money_new)
+    return money_new, counter_old, money_add
+
+
+def buy(money_old, counter_old, cost_item):
+
+    money_new = money_old - cost_item
+    counter = counter_old + 1
+    print('баланс = ', money_new)
+
+    return money_new, counter
+
+
+def buy_stories(buy_dict):
+    for item, value in buy_dict.items():
+        print(f'Номер операции: {value[1]} Покупка: {item}, стоимость: {value[0]}')
+
+
+def cassa(transactions):
+    for item, value in transactions.items():
+        print(f'Номер операции: {item} Расход/приход: {value[0]}, ,баланс: {value[1]}')
+
+
+def wallet(money, counter, buy_dict, transactions):
+
 
     while True:
         print('1. пополнение счета')
@@ -88,7 +112,10 @@ def wallet( counter, transactions):
 
         if choice == '1':
             money_add = int(input('введите сумму пополнения: '))
+
             money_new, counter = refill(money, counter,money_add)
+
+
             transactions[counter] = [money_add, money_new]
             money = money_new
             print(money, counter)
@@ -96,16 +123,16 @@ def wallet( counter, transactions):
         elif choice == '2':
 
             cost_item = int(input('введите цену покупки: '))
-            #
+
             if cost_item <= money:
                 cost_name = input('средств достаточно. Введите наименование покупки: ')
-                money_new, counter = buy(money, counter, cost_item)
+                money_new, counter = buy(money, counter)
+
                 buy_dict[cost_name] = [cost_item, counter]
                 transactions[counter] = [-1 * cost_item, money_new]
                 money = money_new
             else:
                 print('на вашем счете недостаточно средств')
-
 
         elif choice == '3':
             buy_stories(buy_dict)
