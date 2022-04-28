@@ -1,5 +1,7 @@
 import random
 
+from decor import decor_all
+
 def born_fay_forever():
     hardcore = int(input('выберите сложность игры, 1 - сложно, 2 - средне, 3 - легко: '))
 
@@ -39,6 +41,7 @@ def born_fay_forever():
         for j, date in enumerate(dust_dates):
             print(f'{j+1}: {date}',end = '   ')
 
+        @decor_all
         def ansver_score(ansver, scores, game_scores):
             # ansver = int(input('введите номер выбранного ответа '))
             if dust_dates[ansver - 1] == true_date:

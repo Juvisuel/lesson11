@@ -2,9 +2,9 @@ import born_fay_forever
 import wallet
 import os_work
 
-money = 0
+money = wallet.money_check()
 counter = 0
-buyDict = {}
+buyDict = wallet.buy_dict_check()
 transactions = {}
 
 while True:
@@ -21,7 +21,8 @@ while True:
         os_work.os_work()
 
     elif choice_up == 2:
-        money, counter, buyDict, transactions = wallet.wallet(money, counter, buyDict, transactions)
+        money1, counter1, buyDict1, transactions1 = wallet.wallet (counter, transactions)
+        money, counter, buyDict, transactions = money1, counter1, buyDict1, transactions1
 
     elif choice_up == 3:
         born_fay_forever.born_fay_forever()

@@ -1,17 +1,18 @@
 # import random
+import json
+from decor import decor_all
 
-def decor_all(f):
-    def inner(*args, **qwargs):
-        print('*' * 100)
-        result = f(*args, **qwargs)
-        print('*' * 100)
-        return result
-    return inner
-
+# def decor_all(f):
+#     def inner(*args, **qwargs):
+#         print('*' * 100)
+#         result = f(*args, **qwargs)
+#         print('*' * 100)
+#         return result
+#     return inner
 
 @decor_all
-def refill(money_old, counter_old):
-    money_add = int(input('введите сумму пополнения: '))
+def refill(money_old, counter_old, money_add):
+
     money_new = money_old + money_add
     counter_old += 1
     print('баланс = ', money_new)
@@ -19,21 +20,12 @@ def refill(money_old, counter_old):
 
 
 @decor_all
-def buy(money_old, counter_old):
-    cost_item = int(input('введите цену покупки: '))
-    if cost_item <= money_old:
+def buy(money_old, counter_old, cost_item):
+    money_new = money_old - cost_item
+    counter_old += 1
+    print('баланс = ', money_new)
 
-        money_new = money_old - cost_item
-        counter_old += 1
-        cost_name = input('средств достаточно. Введите наименование покупки: ')
-        print('баланс = ', money_new)
-    else:
-        print('на вашем счете недостаточно средств')
-        cost_name = 0
-        money_new = money_old
-        pass
-
-    return [cost_name, cost_item, money_new, counter_old]
+    return [money_new, counter_old]
 
 
 @decor_all
@@ -41,13 +33,49 @@ def buy_stories(buy_dict):
     for item, value in buy_dict.items():
         print(f'Номер операции: {value[1]} Покупка: {item}, стоимость: {value[0]}')
 
-
+@decor_all
 def cassa(transactions):
     for item, value in transactions.items():
         print(f'Номер операции: {item} Расход/приход: {value[0]}, ,баланс: {value[1]}')
 
+@decor_all
+def money_check():
+    try:
+        with open('wallet_balance.txt', 'r') as outfile:
+            balance = int(outfile.read())
 
-def wallet(money, counter, buy_dict, transactions):
+    except:
+        with open('wallet_balance.txt', 'w') as outfile:
+            outfile.write('0')
+            balance = 0
+
+    return balance
+
+@decor_all
+def buy_dict_check():
+
+    try:
+        with open('buy_dict.json', 'r') as outfile:
+            buy_dict = json.load(outfile)
+    except:
+        buy_dict = {}
+        with open('buy_dict.json', 'w') as outfile:
+            json.dump(buy_dict, outfile)\
+
+    return buy_dict
+
+
+def wallet( counter, transactions):
+
+    f = open('wallet_balance.txt', 'r')
+    money = int(f.read())
+    print('баланс', money)
+    f.close()
+
+    with open('buy_dict.json', 'r') as outfile:
+        buy_dict = json.load(outfile)
+
+
 
     while True:
         print('1. пополнение счета')
@@ -59,16 +87,25 @@ def wallet(money, counter, buy_dict, transactions):
         choice = input('Выберите пункт меню ')
 
         if choice == '1':
-            money_new, counter, money_add = refill(money, counter)
+            money_add = int(input('введите сумму пополнения: '))
+            money_new, counter = refill(money, counter,money_add)
             transactions[counter] = [money_add, money_new]
             money = money_new
             print(money, counter)
 
         elif choice == '2':
-            cost_name, cost_item, money_new, counter = buy(money, counter)
-            buy_dict[cost_name] = [cost_item, counter]
-            transactions[counter] = [-1 * cost_item, money_new]
-            money = money_new
+
+            cost_item = int(input('введите цену покупки: '))
+            #
+            if cost_item <= money:
+                cost_name = input('средств достаточно. Введите наименование покупки: ')
+                money_new, counter = buy(money, counter, cost_item)
+                buy_dict[cost_name] = [cost_item, counter]
+                transactions[counter] = [-1 * cost_item, money_new]
+                money = money_new
+            else:
+                print('на вашем счете недостаточно средств')
+
 
         elif choice == '3':
             buy_stories(buy_dict)
@@ -85,5 +122,11 @@ def wallet(money, counter, buy_dict, transactions):
             print('Неверный пункт меню')
 
     print(f'баланс = {money}, номер последней операции {counter}')
+    f = open('wallet_balance.txt', 'w')
+    f.write(str(money))
+    f.close()
+
+    with open('buy_dict.json', 'w') as outfile:
+        json.dump(buy_dict, outfile)
 
     return money, counter, buy_dict, transactions
