@@ -1,0 +1,73 @@
+Index: wallet.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># import random\r\nimport json\r\n\r\ndef refill(money_old, counter_old, money_add):\r\n\r\n    money_new = money_old + money_add\r\n    counter_old += 1\r\n    print('баланс = ', money_new)\r\n    return money_new, counter_old, money_add\r\n\r\n\r\ndef buy(money_old, counter_old, cost_item):\r\n\r\n    money_new = money_old - cost_item\r\n    counter = counter_old + 1\r\n    print('баланс = ', money_new)\r\n\r\n    return money_new, counter\r\n\r\n\r\ndef buy_stories(buy_dict):\r\n    for item, value in buy_dict.items():\r\n        print(f'Номер операции: {value[1]} Покупка: {item}, стоимость: {value[0]}')\r\n\r\n\r\ndef cassa(transactions):\r\n    for item, value in transactions.items():\r\n        print(f'Номер операции: {item} Расход/приход: {value[0]}, ,баланс: {value[1]}')\r\n\r\n\r\ndef money_check():\r\n    try:\r\n        with open('wallet_balance.txt', 'r') as outfile:\r\n            balance = int(outfile.read())\r\n\r\n    except:\r\n        with open('wallet_balance.txt', 'w') as outfile:\r\n            outfile.write('0')\r\n            balance = 0\r\n\r\n    return balance\r\n\r\n\r\ndef buy_dict_check():\r\n\r\n    try:\r\n        with open('buy_dict.json', 'r') as outfile:\r\n            buy_dict = json.load(outfile)\r\n    except:\r\n        buy_dict = {}\r\n        with open('buy_dict.json', 'w') as outfile:\r\n            json.dump(buy_dict, outfile)\\\r\n\r\n    return buy_dict\r\n\r\n\r\ndef wallet( counter, transactions):\r\n\r\n    f = open('wallet_balance.txt', 'r')\r\n    money = int(f.read())\r\n    print('баланс', money)\r\n    f.close()\r\n\r\n    with open('buy_dict.json', 'r') as outfile:\r\n        buy_dict = json.load(outfile)\r\n\r\n\r\n\r\n    while True:\r\n        print('1. пополнение счета')\r\n        print('2. покупка')\r\n        print('3. история покупок')\r\n        print('4. история операций')\r\n        print('5. выход')\r\n\r\n        choice = input('Выберите пункт меню ')\r\n\r\n        if choice == '1':\r\n            money_add = int(input('введите сумму пополнения: '))\r\n            money_new, counter, money_add = refill(money, counter, money_add)\r\n            transactions[counter] = [money_add, money_new]\r\n            money = money_new\r\n            print(money, counter)\r\n\r\n        elif choice == '2':\r\n            cost_item = int(input('введите цену покупки: '))\r\n\r\n            if cost_item <= money:\r\n                cost_name = input('средств достаточно. Введите наименование покупки: ')\r\n                money_new, counter = buy(money, counter, cost_item)\r\n                buy_dict[cost_name] = [cost_item, counter]\r\n                transactions[counter] = [-1 * cost_item, money_new]\r\n                money = money_new\r\n            else:\r\n                print('на вашем счете недостаточно средств')\r\n                pass\r\n\r\n\r\n        elif choice == '3':\r\n            buy_stories(buy_dict)\r\n\r\n        elif choice == '4':\r\n            cassa(transactions)\r\n\r\n        elif choice == '5':\r\n            print('до встречи')\r\n            # print(transactions)\r\n            # print(buyDict)\r\n            break\r\n        else:\r\n            print('Неверный пункт меню')\r\n\r\n    print(f'баланс = {money}, номер последней операции {counter}')\r\n    f = open('wallet_balance.txt', 'w')\r\n    f.write(str(money))\r\n    f.close()\r\n\r\n    with open('buy_dict.json', 'w') as outfile:\r\n        json.dump(buy_dict, outfile)\r\n\r\n    return money, counter, buy_dict, transactions\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/wallet.py b/wallet.py
+--- a/wallet.py	(revision 8b01594f91b40025ad0de3e3e301e217616c3c72)
++++ b/wallet.py	(date 1651142839137)
+@@ -1,6 +1,15 @@
+ # import random
+ import json
+ 
++def decor_all(f):
++    def inner(*args, **qwargs):
++        print('*' * 100)
++        result = f(*args, **qwargs)
++        print('*' * 100)
++        return result
++    return inner
++
++@decor_all
+ def refill(money_old, counter_old, money_add):
+ 
+     money_new = money_old + money_add
+@@ -8,7 +17,7 @@
+     print('баланс = ', money_new)
+     return money_new, counter_old, money_add
+ 
+-
++@decor_all
+ def buy(money_old, counter_old, cost_item):
+ 
+     money_new = money_old - cost_item
+@@ -17,17 +26,17 @@
+ 
+     return money_new, counter
+ 
+-
++@decor_all
+ def buy_stories(buy_dict):
+     for item, value in buy_dict.items():
+         print(f'Номер операции: {value[1]} Покупка: {item}, стоимость: {value[0]}')
+ 
+-
++@decor_all
+ def cassa(transactions):
+     for item, value in transactions.items():
+         print(f'Номер операции: {item} Расход/приход: {value[0]}, ,баланс: {value[1]}')
+ 
+-
++@decor_all
+ def money_check():
+     try:
+         with open('wallet_balance.txt', 'r') as outfile:
+@@ -40,7 +49,7 @@
+ 
+     return balance
+ 
+-
++@decor_all
+ def buy_dict_check():
+ 
+     try:
+@@ -95,7 +104,6 @@
+                 print('на вашем счете недостаточно средств')
+                 pass
+ 
+-
+         elif choice == '3':
+             buy_stories(buy_dict)
+ 
