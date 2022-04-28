@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+
+    <list default="true" id="193bd2b5-1670-4034-92f1-6094e8745a49" name="Changes" comment="lesson14" />
+=======
     <list default="true" id="193bd2b5-1670-4034-92f1-6094e8745a49" name="Changes" comment="moved">
       <change afterPath="$PROJECT_DIR$/test_filemanager.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/test_python.py" afterDir="false" />
@@ -9,6 +12,7 @@
       <change beforePath="$PROJECT_DIR$/os_work.py" beforeDir="false" afterPath="$PROJECT_DIR$/os_work.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wallet.py" beforeDir="false" afterPath="$PROJECT_DIR$/wallet.py" afterDir="false" />
     </list>
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +26,8 @@
     </option>
   </component>
   <component name="Git.Settings">
+
+=======
     <favorite-branches>
       <branch-storage>
         <map>
@@ -40,6 +46,7 @@
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
+
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -68,7 +75,11 @@
       <recent name="F:\learn_neuro\pythonProject" />
     </key>
   </component>
+
+  <component name="RunManager" selected="Python tests.Python tests for test_filemanager.test_buy">
+=======
   <component name="RunManager" selected="Python tests.Python tests in test_filemanager.py">
+
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="pythonProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -90,25 +101,74 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="os_work" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_filemanager.test_buy" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="pythonProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="F:\learn_neuro\pythonProject\os_work.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_filemanager.test_buy&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_filemanager.test_cassa" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="pythonProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_filemanager.test_cassa&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_filemanager.test_decor" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="pythonProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_filemanager.test_decor&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_filemanager.test_refill" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="pythonProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_filemanager.test_refill&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_filemanager.test_wallet_buy_stories" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="pythonProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_filemanager.test_wallet_buy_stories&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="Python tests in test_filemanager.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
@@ -127,8 +187,15 @@
     </configuration>
     <recent_temporary>
       <list>
+
+        <item itemvalue="Python tests.Python tests for test_filemanager.test_buy" />
+        <item itemvalue="Python tests.Python tests for test_filemanager.test_decor" />
+        <item itemvalue="Python tests.Python tests for test_filemanager.test_refill" />
+        <item itemvalue="Python tests.Python tests for test_filemanager.test_cassa" />
+        <item itemvalue="Python tests.Python tests for test_filemanager.test_wallet_buy_stories" />
         <item itemvalue="Python tests.Python tests in test_filemanager.py" />
         <item itemvalue="Python.os_work" />
+
       </list>
     </recent_temporary>
   </component>
@@ -141,6 +208,16 @@
       <option name="presentableId" value="Default" />
       <updated>1649951766169</updated>
     </task>
+
+    <task id="LOCAL-00001" summary="lesson14">
+      <created>1651145779340</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1651145779340</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+=======
     <task id="LOCAL-00001" summary="moved">
       <created>1650018178105</created>
       <option name="number" value="00001" />
@@ -156,6 +233,7 @@
       <updated>1650018217120</updated>
     </task>
     <option name="localTasksCounter" value="3" />
+
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -164,17 +242,17 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="CUSTOM_BOOLEAN_PROPERTIES">
-                <map>
-                  <entry key="Show.Git.Branches" value="true" />
-                </map>
-              </option>
+
+
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="lesson12" />
+
+                        <option value="HEAD" />
+=======
+
                       </list>
                     </value>
                   </entry>
@@ -187,7 +265,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="moved" />
-    <option name="LAST_COMMIT_MESSAGE" value="moved" />
+
+    <MESSAGE value="lesson14" />
+    <option name="LAST_COMMIT_MESSAGE" value="lesson14" />
+
   </component>
 </project>
